@@ -8,12 +8,12 @@ export default StyleSheet.create({
   header: {
     marginTop: 30,
     marginBottom: 15,
-    backgroundColor: 'skyblue',
+    backgroundColor: '#EC5E5E',
     flexDirection: 'row',
   },
   footer: {
     marginTop: 20,
-    backgroundColor: 'skyblue',
+    backgroundColor: '#EC5E5E',
     flexDirection: 'row'
   },
   title: {
@@ -64,5 +64,69 @@ export default StyleSheet.create({
   buttonText: {
     color:"#2B2B52",
     fontSize: 20
+  },
+  hometext: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: 15,
+    marginTop: 10,
+    marginBottom: 15,
+  },
+  hometext2: {
+    backgroundColor: "#eba4a4",
+    borderRadius: 5,
+    borderWidth: 1,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: 25,
+    paddingTop: 10,
+    paddingBottom: 10,
+    marginLeft: 50,
+    marginRight: 50,
+    marginTop: 30,
+    marginBottom: 15,
+  },
+  hometext3: {
+    textAlign: 'center',
+    fontSize: 15,
+    borderWidth: 1,
+    borderRadius: 5,
+    marginTop: 10,
+    marginLeft: 50,
+    marginRight: 50,
+    padding: 5,
+    backgroundColor: "skyblue",
+  },
+  hometextinput: {
+    textAlign: 'center',
+    borderRadius: 5,
+    borderWidth: 1,
+    marginLeft: 20,
+    marginRight: 20,
+    padding: 5,
+  },
+  gamerules: {
+    marginLeft: 25,
+    marginRight: 25,
+  },
+  homegl: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+    marginTop: 5,
+  },
+  homegl2: {
+    marginLeft: 10,
+    marginTop: 25,
+  },
+  homegl3: {
+    textAlign: 'center',
+    marginTop: 10,
+  },
+  homegl4: {
+    textAlign: 'center',
+  },
+  pointrow: {
+    marginLeft: 8,
+    marginBottom: 5,
   }
 });

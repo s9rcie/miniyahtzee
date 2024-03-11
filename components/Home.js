@@ -11,6 +11,9 @@ import {
   MAX_SPOT, 
   BONUS_POINTS_LIMIT, 
   BONUS_POINTS } from '../constants/Game';
+import style from '../style/style'
+
+// I went for the satisfactory level 1, for extra I changed some positioning and styling of the text and colors from Home and Gameboard screens, assuming it at least doesn't reduce points. //
 
 export default function Home ({navigation}) {
 
@@ -29,51 +32,53 @@ export default function Home ({navigation}) {
     <Header />
     <View>
       <MaterialCommunityIcons
+      marginLeft={135}
         name="information"
         size={90}
-        color="steelblue"
+        color="#EC5E5E"
       />
       {!hasPlayerName ?
         <>
-          <Text>For scoreboard enter your name...</Text>
+          <Text style={style.hometext}>For scoreboard enter your name...</Text>
           <TextInput
+            style={style.hometextinput}
             onChangeText={setPlayerName}
             autoFocus={true}
           />
           <Pressable
             onPress={() => handlePlayerName(playerName)}>
-            <Text>OK</Text>
+            <Text style={style.hometext2}>OK</Text>
           </Pressable>
         </>
       :
         <>
-          <Text>Rules of the game</Text>
-          <Text multiline="true">
+          <Text style={style.hometext}>Rules of the game</Text>
+          <Text multiline="true" style={style.gamerules}>
           THE GAME: Upper section of the classic Yahtzee
           dice game. You have {NBR_OF_DICES} dices and
-          for the every dice you have {NBR_OF_THROWS}
+          for the every dice you have {NBR_OF_THROWS}{" "}
           throws. After each throw you can keep dices in
           order to get same dice spot counts as many as
           possible. In the end of the turn you must select
           your points from {MIN_SPOT} to {MAX_SPOT}.
           Game ends when all points have been selected.
-          The order for selecting those is free.
+          The order for selecting those is free.{'\n'}
 
-          POINTS: After each turn game calculates the sum
+          {'\n'}POINTS: After each turn game calculates the sum
           for the dices you selected. Only the dices having
           the same spot count are calculated. Inside the
           game you can not select same points from
-          {MIN_SPOT} to {MAX_SPOT} again.
+          {" "}{MIN_SPOT} to {MAX_SPOT} again.{'\n'}
 
-          GOAL: To get points as much as possible.
-          {BONUS_POINTS_LIMIT} points is the limit of
-          getting bonus which gives you {BONUS_POINTS}
-          points more.
+          {'\n'}GOAL: To get points as much as possible.
+          {" "}{BONUS_POINTS_LIMIT} points is the limit of
+          getting bonus which gives you {BONUS_POINTS}{" "}
+          points more.{'\n'}
           </Text>
-          <Text>Good luck, {playerName}</Text>
+          <Text style={style.homegl4}>Good luck, {playerName}</Text>
           <Pressable
-            onPress={() => navigation.navigate("Gameboard")}>
-            <Text>Start game</Text>
+            onPress={() => navigation.navigate("Gameboard", {player: playerName})}>
+            <Text style={style.homegl}>Start game</Text>
           </Pressable>
         </>
       }
